@@ -1,10 +1,7 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: irelance
- * Date: 2017/10/1
- * Time: 下午3:25
+ 
  */
 namespace Irelance\Mozjs34;
 
@@ -100,7 +97,8 @@ class Context
 
     public function getSummary($key)
     {
-        return $this->summaries[$key];
+        //print($key); //zzw
+		return $this->summaries[$key];
     }
 
     /**

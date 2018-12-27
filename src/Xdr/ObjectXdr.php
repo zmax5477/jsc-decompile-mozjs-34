@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: irelance
- * Date: 2017/10/10
- * Time: 上午11:49
+
  */
 
 namespace Irelance\Mozjs34\Xdr;

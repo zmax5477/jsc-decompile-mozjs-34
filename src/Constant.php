@@ -1,10 +1,7 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: irelance
- * Date: 2017/9/30
- * Time: 上午10:05
+
  */
 namespace Irelance\Mozjs34;
 if (php_sapi_name() == 'cli') {

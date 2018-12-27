@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: irelance
- * Date: 2017/10/12
- * Time: 下午1:43
+
  */
 
 namespace Irelance\Mozjs34\Helper;

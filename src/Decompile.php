@@ -1,13 +1,7 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: irelance
- * Date: 2017/9/20
- * Time: 上午8:04
- *
- * js/src/jsscript.h
- * js/src/vm/Xdr.h
+ 
  */
 namespace Irelance\Mozjs34;
 

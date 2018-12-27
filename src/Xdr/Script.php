@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: irelance
- * Date: 2017/10/10
- * Time: 上午11:30
+
  */
 
 namespace Irelance\Mozjs34\Xdr;
@@ -22,7 +19,8 @@ trait Script
 
     protected function parserHeader(Context $context)
     {
-        $nargs = $this->todec(2);
+        
+		$nargs = $this->todec(2);
         $context->addSummary('nargs', $nargs);
         $context->addSummary('nblocklocals', $this->todec(2));
         $nvars = $this->todec();
@@ -44,6 +42,7 @@ trait Script
         $scriptBits = array_flip(Constant::_ScriptBits);
         if ($scriptBit & (1 << $scriptBits['OwnSource'])) {
             $context->addSummary('hasSource', $this->todec(1));
+			//echo($this->todec(1));//zzw
             $context->addSummary('retrievable', $this->todec(1));
             if($context->getSummary('hasSource') && !$context->getSummary('retirevable')) {
                 $context->addSummary('sourceLength', $this->todec());
@@ -52,9 +51,9 @@ trait Script
                 $context->addSummary(
                     'sourceBytes',
                     $this->getRawHex(
-                        $this->getSummary('sourcecompressedLength') ?
-                        $this->getSummary('sourcecompressedLength') : 
-                        $this->getSummary('sourceLength') * 2
+                        $context->getSummary('sourcecompressedLength') ?
+                        $context->getSummary('sourcecompressedLength') : 
+                        $context->getSummary('sourceLength') * 2
                     )
                     );
             }
@@ -91,6 +90,7 @@ trait Script
         $context->addSummary('column', $this->todec());
         $context->addSummary('nslots', $this->todec());
         $context->addSummary('staticLevel', $this->todec());
+		
     }
 
     protected function parserScript(Context $context)
